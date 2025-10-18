@@ -74,26 +74,114 @@ CREATE TABLE rate_res (
   FOREIGN KEY (res_id) REFERENCES restaurant(res_id)
 );
 
--- Dữ liệu mẫu
-INSERT INTO user (full_name, email, password)
-VALUES 
-('Nguyen Van Anh','a@gmail.com','123'),
-('Tran Thi Bich','b@gmail.com','123'),
-('Le Van Cuong','c@gmail.com','123'),
-('Pham Duong','d@gmail.com','123'),
-('Nguyen An Nhon','e@gmail.com','123');
+-- ========== DỮ LIỆU MẪU ==========
 
-INSERT INTO restaurant (res_name,image,`desc`)
-VALUES
-('Nha Hang Sai Gon','saigon.jpg','Ngon'),
-('Nha Hang Ha Noi','hanoi.jpg','Rong rai'),
-('Nha Hang Da Nang','danang.jpg','Bien'),
-('Nha Hang Hue','hue.jpg','Thanh co'),
-('Nha Hang Ca Mau','camau.jpg','Rung ngap man');
+-- 20 người dùng
+INSERT INTO user (full_name, email, password) VALUES
+('Nguyen Van A','a@gmail.com','123'),
+('Tran Thi B','b@gmail.com','123'),
+('Le Van C','c@gmail.com','123'),
+('Pham D','d@gmail.com','123'),
+('Do Thi E','e@gmail.com','123'),
+('Nguyen Van F','f@gmail.com','123'),
+('Tran Thi G','g@gmail.com','123'),
+('Le Van H','h@gmail.com','123'),
+('Pham I','i@gmail.com','123'),
+('Do Thi K','k@gmail.com','123'),
+('Nguyen Van L','l@gmail.com','123'),
+('Tran Thi M','m@gmail.com','123'),
+('Le Van N','n@gmail.com','123'),
+('Pham O','o@gmail.com','123'),
+('Do Thi P','p@gmail.com','123'),
+('Nguyen Van Q','q@gmail.com','123'),
+('Tran Thi R','r@gmail.com','123'),
+('Le Van S','s@gmail.com','123'),
+('Pham T','t@gmail.com','123'),
+('Do Thi U','u@gmail.com','123');
 
-INSERT INTO like_res (user_id, res_id, date_like)
-VALUES 
-(1,1,NOW()),(1,2,NOW()),(2,1,NOW()),(3,3,NOW()),(3,1,NOW()),(3,2,NOW()),(4,2,NOW());
+-- 10 nhà hàng
+INSERT INTO restaurant (res_name, image, `desc`) VALUES
+('Sai Gon Food','saigon.jpg','Ẩm thực miền Nam'),
+('Ha Noi Taste','hanoi.jpg','Hương vị miền Bắc'),
+('Da Nang Beach','danang.jpg','Ẩm thực miền Trung'),
+('Hue Royal','hue.jpg','Món cung đình Huế'),
+('Ca Mau Corner','camau.jpg','Đặc sản miền Tây'),
+('Vung Tau View','vungtau.jpg','Hải sản tươi sống'),
+('Nha Trang Chill','nhatrang.jpg','Ẩm thực biển'),
+('Binh Duong BBQ','binhduong.jpg','Thịt nướng ngon'),
+('Can Tho Garden','cantho.jpg','Ẩm thực sông nước'),
+('Phu Quoc Paradise','phuquoc.jpg','Đặc sản đảo ngọc');
+
+-- Loại món ăn
+INSERT INTO food_type (type_name) VALUES
+('Món chính'),
+('Đồ uống'),
+('Tráng miệng'),
+('Món chay'),
+('Đồ nướng');
+
+-- 20 món ăn
+INSERT INTO food (food_name,image,price,`desc`,type_id) VALUES
+('Phở Bò','pho.jpg',45000,'Phở bò truyền thống',1),
+('Cơm Tấm','comtam.jpg',40000,'Cơm tấm sườn bì chả',1),
+('Bánh Mì Thịt','banhmi.jpg',25000,'Bánh mì pate thịt nguội',1),
+('Cà Phê Sữa','caphe.jpg',20000,'Cà phê sữa đá',2),
+('Trà Đào','tradao.jpg',25000,'Trà đào cam sả',2),
+('Chè Thái','chethai.jpg',30000,'Chè trái cây',3),
+('Kem Dừa','kemdua.jpg',35000,'Kem dừa xiêm',3),
+('Đậu Hũ Nóng','dauhu.jpg',15000,'Đậu hũ nước đường',4),
+('Cơm Chay Rau Củ','comchay.jpg',35000,'Cơm chay rau củ quả',4),
+('Bún Đậu Mắm Tôm','bundau.jpg',40000,'Bún đậu mắm tôm',1),
+('Gà Nướng Muối Ớt','ganuong.jpg',90000,'Gà nướng muối ớt nguyên con',5),
+('Thịt Xiên Nướng','thitxien.jpg',30000,'Xiên thịt nướng thơm ngon',5),
+('Bánh Xèo','banhxeo.jpg',40000,'Bánh xèo miền Tây',1),
+('Hủ Tiếu Nam Vang','hutieu.jpg',45000,'Hủ tiếu đặc sản miền Nam',1),
+('Nước Cam','nuoccam.jpg',20000,'Nước cam ép tươi',2),
+('Soda Bạc Hà','soda.jpg',25000,'Soda bạc hà mát lạnh',2),
+('Kem Matcha','kemmatcha.jpg',40000,'Kem trà xanh Nhật Bản',3),
+('Bánh Flan','flan.jpg',25000,'Bánh flan trứng sữa',3),
+('Mì Cay','micay.jpg',50000,'Mì cay cấp độ 7',1),
+('Lẩu Hải Sản','lauhaisan.jpg',150000,'Lẩu hải sản tươi ngon',5);
+
+-- sub_food
+INSERT INTO sub_food (sub_name, sub_price, food_id) VALUES
+('Thêm trứng',5000,1),
+('Thêm pate',7000,3),
+('Thêm topping trái cây',8000,6),
+('Thêm nước mắm',2000,10),
+('Thêm rau sống',3000,9),
+('Thêm kem tươi',10000,17),
+('Thêm xiên thịt',15000,12),
+('Thêm bún',5000,10),
+('Thêm đá lạnh',2000,4),
+('Thêm nước sốt',4000,11);
+
+-- like_res
+INSERT INTO like_res (user_id, res_id, date_like) VALUES
+(1,1,NOW()),(2,1,NOW()),(3,2,NOW()),(4,3,NOW()),(5,4,NOW()),
+(6,5,NOW()),(7,6,NOW()),(8,7,NOW()),(9,8,NOW()),(10,9,NOW()),
+(11,10,NOW()),(12,1,NOW()),(13,2,NOW()),(14,3,NOW()),(15,4,NOW()),
+(16,5,NOW()),(17,6,NOW()),(18,7,NOW()),(19,8,NOW()),(20,9,NOW());
+
+-- rate_res
+INSERT INTO rate_res (user_id, res_id, amount, date_rate) VALUES
+(1,1,5,NOW()),(2,2,4,NOW()),(3,3,5,NOW()),(4,4,3,NOW()),
+(5,5,5,NOW()),(6,6,4,NOW()),(7,7,5,NOW()),(8,8,3,NOW()),
+(9,9,4,NOW()),(10,10,5,NOW());
+
+-- order
+INSERT INTO `order` (user_id, food_id, amount, code, arr_sub_id) VALUES
+(1,1,2,'ORD001','1'),
+(2,3,1,'ORD002','2'),
+(3,4,3,'ORD003','9'),
+(4,10,2,'ORD004','4,8'),
+(5,11,1,'ORD005','10'),
+(6,17,2,'ORD006','6'),
+(7,5,2,'ORD007',NULL),
+(8,19,1,'ORD008',NULL),
+(9,14,3,'ORD009',NULL),
+(10,12,1,'ORD010','7');
+
 
 -- bài tập
 -- BT 1: Tìm 5 người đã like nhà hàng nhiều nhất
