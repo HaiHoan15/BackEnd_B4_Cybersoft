@@ -87,8 +87,8 @@ INSERT INTO restaurant (res_name,image,`desc`)
 VALUES
 ('Nha Hang Sai Gon','saigon.jpg','Ngon'),
 ('Nha Hang Ha Noi','hanoi.jpg','Rong rai'),
-('Nha Hang Da Nang','danang.jpg','Bien');
-('Nha Hang Hue','hue.jpg','Thanh co');
+('Nha Hang Da Nang','danang.jpg','Bien'),
+('Nha Hang Hue','hue.jpg','Thanh co'),
 ('Nha Hang Ca Mau','camau.jpg','Rung ngap man');
 
 INSERT INTO like_res (user_id, res_id, date_like)
