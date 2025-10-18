@@ -154,10 +154,16 @@ INSERT INTO sub_food (sub_name, sub_price, food_id) VALUES
 
 -- like_res
 INSERT INTO like_res (user_id, res_id, date_like) VALUES
-(1,1,NOW()),(2,1,NOW()),(3,2,NOW()),(4,3,NOW()),(5,4,NOW()),
-(6,5,NOW()),(7,6,NOW()),(8,7,NOW()),(9,8,NOW()),(10,9,NOW()),
-(11,10,NOW()),(12,1,NOW()),(13,2,NOW()),(14,3,NOW()),(15,4,NOW()),
-(16,5,NOW()),(17,6,NOW()),(18,7,NOW()),(19,8,NOW()),(20,9,NOW());
+(1,1,NOW()),(1,2,NOW()),(1,3,NOW()),(1,4,NOW()),(1,5,NOW()),
+(2,1,NOW()),(2,2,NOW()),(2,3,NOW()),
+(3,4,NOW()),(3,5,NOW()),
+(4,1,NOW()),(4,2,NOW()),(4,3,NOW()),(4,6,NOW()),
+(5,7,NOW()),
+(6,8,NOW()),(6,9,NOW()),(6,10,NOW()),
+(7,2,NOW()),(7,3,NOW()),
+(8,4,NOW()),(8,5,NOW()),(8,6,NOW()),(8,7,NOW()),(8,8,NOW()),
+(9,1,NOW()),(9,2,NOW()),(9,3,NOW()),(9,4,NOW()),
+(10,5,NOW()),(10,6,NOW());
 
 -- rate_res
 INSERT INTO rate_res (user_id, res_id, amount, date_rate) VALUES
