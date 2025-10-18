@@ -120,7 +120,7 @@ GROUP BY u.user_id, u.full_name
 ORDER BY total_orders DESC
 LIMIT 1;
 
--- 4: Tìm người dùng không hoạt động
+-- BT4: Tìm người dùng không hoạt động
 SELECT u.user_id, u.full_name
 FROM user u
 LEFT JOIN `order` o ON u.user_id = o.user_id
