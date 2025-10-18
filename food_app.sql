@@ -95,7 +95,7 @@ INSERT INTO like_res (user_id, res_id, date_like)
 VALUES 
 (1,1,NOW()),(1,2,NOW()),(2,1,NOW()),(3,3,NOW()),(3,1,NOW()),(3,2,NOW()),(4,2,NOW());
 
--- Câu truy vấn yêu cầu bài tập
+-- bài tập
 -- BT 1: Tìm 5 người đã like nhà hàng nhiều nhất
 SELECT u.user_id, u.full_name, COUNT(lr.res_id) AS total_like
 FROM like_res lr
